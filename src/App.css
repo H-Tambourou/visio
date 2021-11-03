@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.nav{
+  position: fixed;
+  top:0; 
+  width:100%; 
+  z-index:7
+}
+.navWrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height: 3re;
+}
+.navLinks{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  align-items:center
+}
+.menu{
+  display: none;
+}
+.line{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: black;
+}
+.main{
+  background-image: url("./assets/img/home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.arrow {
+  cursor: pointer;
+  height: 5vw;
+  width: 5vw;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+}
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+.photos{
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  padding:0 8px;
+}
+.photo:hover{
+  filter: opacity(.8);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.photo img{
+  width: 100%;
+  transition: all 780ms ease;
+  cursor: pointer;
+  margin-bottom: 8px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.status{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: black;
+  overflow: hidden;
+  transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+  visibility: hidden;
+  opacity:0;
+  transform:scale(0);
+  z-index: 999;
+}
+.status.active{
+  visibility: visible;
+  opacity:1;
+  transform: scale(1);
+}
+.active img{
+  width:auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: block;
+  line-height: 0;
+  box-sizing: border-box;
+  padding: 20px 0 20px;
+  margin: 0 auto;
+}
+.status.active svg{
+  position:fixed;
+  top:10px;
+  right:10px;
+  width:2rem;
+  height:2rem;
+  color:white;
+  background-color: rgba(0,0,0,0,0l4);
+  cursor: pointer;
+}
+.contactCol{
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+.contactCol1{
+  width: 50%;
+}
+.contactCol2{
+  width: 50%;
+}
+
+input:focus{
+  outline: none;
+}
+textarea:focus{
+  outline: none;
+}
+button{
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: black;
+  border: none;
+  padding: .3em;
+  cursor: pointer;
+  
 }
